@@ -1,0 +1,171 @@
+--> Generar plantilla de módulo para hacer routing:
+
+ng generate module --routing App
+
+--> Generar nuevo proyecto que ademas incluya routing:
+
+ng new app_name --routing true
+
+
+INSTALAR VERSIÓN ESPECÍFICA DE ANGULAR:
+
+Para instalar una versión específica de Angular, va a depender de la versión de ANGULAR CLI que tengamos, porque cuando hagamos un 'ng new', este proyecto nuevo se va a generar con la versión de ANGULAR que la va a establecer nuestra versión de ANGULAR CLI instalada.
+
+Primero desinstalamos cualquier versión anterior de ANGULAR CLI:
+
+  npm uninstall -g angular-cli
+
+  npm uninstall -g @angular/cli
+
+Después instalamos la versión de ANGULAR CLI deseada. Info: La versión 1.7.4 de ANGULAR CLI nos permite trabajar con ANGULAR 5.
+
+  npm install -g @angular/cli@1.7.4
+
+Info: el comando npm view @angular/cli nos permite ver que versiones actuales disponibles hay de ANGULAR CLI.
+
+Ahora podemos crear proyectos con ANGULAR 5.
+
+
+INSTALAR ANGULAR CLI:
+
+  npm install -g @angular/cli@latest
+
+ACTUALIZAR VERSION LOCAL DE ANGULAR CLI:
+
+  npm uninstall --save-dev angular-cli
+
+  npm install --save-dev @angular/cli@latest
+
+
+INSTALAR JQUERY:
+
+Primero en la línea de comandos:
+
+  npm install jquery --save
+
+  npm install @types/jquery (Este sirve para que cuando codeamos, en Typescript se reconozca el signo "$" de JQuery, entre otras cosas. Si aún así no lo reconoce, se 			    puede agregar ésta línea: import * as $ from 'jquery'; en el archivo app.component.ts).
+
+Después agregar en el archivo angulas-cli.json o angular.json las líneas:
+
+  "scripts": [ "../node_modules/jquery/dist/jquery.min.js" ]
+
+INSTALAR BOOTSTRAP 3.3.7:
+
+Primero en la línea de comandos:
+
+ npm install bootstrap@3.3.7    -> OPCIONAL EL @version para instalar una versión específica.
+
+ npm install popper.js
+
+ npm install jquery (si no lo teniamos instalado)
+
+Después agregar en el archivo angular-cli.json o angular.json las líneas:
+
+"styles": [
+       	"styles.css",
+	"../node_modules/bootstrap/dist/css/bootstrap.min.css"
+       	
+     ]
+
+--------------
+
+"scripts": [ 
+	"../node_modules/jquery/dist/jquery.min.js",
+	"../node_modules/bootstrap/dist/js/bootstrap.js" (esta se agrega, es importante que primero esté la línea del JQuery y haber instalado JQuery, porque 						          Bootstrap lo usa).
+    ]
+
+
+INSTALAR BOOTSTRAP 4.0.0 (con npm install y local):
+
+Primero en la línea de comandos:
+
+ npm install bootstrap@4.0.0    -> OPCIONAL EL @version para instalar una versión específica.
+
+ npm install popper.js
+
+ npm install jquery (si no lo teniamos instalado)
+
+Después agregar en el archivo angular-cli.json o angular.json las líneas:
+
+"styles": [
+       	"styles.css",
+	"../node_modules/bootstrap/dist/css/bootstrap.min.css"
+       	
+     ]
+
+--------------
+
+"scripts": [ 
+	"../node_modules/jquery/dist/jquery.min.js",
+	"../node_modules/popper.js/dist/popper.min.js",
+	"../node_modules/bootstrap/dist/js/bootstrap.min.js" (esta se agrega, es importante que primero esté la línea del JQuery y haber instalado JQuery, porque 					          		      Bootstrap lo usa).
+    ]
+
+INSTALAR BOOTSTRAP 4.0.0 (con referencias a links de internet [de esta forma me andan los modals xD]):
+
+Acceder al archivo index.html de nuestro proyecto.
+
+Dentro del tag <head> poner:
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+Dentro del tag <body> poner:
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+(en este orden para que funcione).
+
+Reiniciar el proyecto y listo.
+
+INSTALAR PRIMENG:
+
+Primero en la línea de comandos:
+
+  npm install primeng --save
+
+  npm install font-awesome (si no lo tenemos)
+
+Después agregar en el archivo angulas-cli.json o angular.json las líneas:
+
+"styles": [
+  "../node_modules/font-awesome/css/font-awesome.min.css",
+  "../node_modules/primeng/resources/themes/omega/theme.css",
+  "../node_modules/primeng/resources/primeng.min.css",
+],
+
+INSTALAR MATERIAL:
+
+En línea de comandos:
+
+npm install --save @angular/material @angular/cdk
+
+IMPORT PARA USAR *ngFor
+
+En app.module.ts
+
+import { FormsModule } from '@angular/forms';
+
+y abajo llamarlo dentro de 'imports';
+
+COMANDOS NPM
+
+  -> Listar en forma de arbol las dependencias que tengo: npm ls
+
+  -> Instalar Paquete en una versión específica: npm install nombreDelPaquete@version
+
+  -> Hacer que al instalar un paquete también se coloque en el Package.Json, le agregamos --save en el install
+
+  -> Borrar un paquete del proyecto: npm uninstall nombreDelPaquete | --save
+
+Notas:
+
+  -> Se puede reemplazar la versión de una dependencia simplemente instalándola denuevo y especificando la versión deseada, además nos conviene agregar --save para que      en el Package.Json también se actualize.
+
+  -> el agregado -g no es necesario para todos los paquetes, es útil en algunos, como el angular/cli, Bower, etc.
+
+
+
