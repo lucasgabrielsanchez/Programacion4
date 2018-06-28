@@ -143,7 +143,7 @@ En línea de comandos:
 
 npm install --save @angular/material @angular/cdk
 
-IMPORT PARA USAR *ngFor
+IMPORT PARA USAR *ngFor y [(ngModel)]
 
 En app.module.ts
 
